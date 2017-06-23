@@ -1,3 +1,6 @@
+<?php
+require("../controlador/xtabla-control.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,23 +11,23 @@
   <body>
     <h1>nombre de la tabla</h1>
     <!--formulario de la tabla-->
-    <form action="?ac=<?php echo $xxxclase->__GET('xxxid:clase') > 0 'actualizar' : 'registrar';?> " method="post">
-      <input type="hidden" name="id" value="<?php echo $xxxclase->__GET('xxxid:clase');?>">
+    <form action="?ac=<?php echo $xclase->__GET('xxxid:clase') > 0 'actualizar' : 'registrar';?> " method="post">
+      <input type="hidden" name="id" value="<?php echo $xclase->__GET('xxxid:clase');?>">
       <!--
         AQUI VAN A PONER LAS ETIQUETAS SEGUN LOS CAMPOS DELA TABLA
         CON EL METODO __GET EN EL CAMPO VALUE SI ES UN INPUT "CAJA DE TEXTO"
         NO OLVIDAR EL echo DENTRO DE LAS ETIQUETAS PHP
       -->
       <label>lo que quieren que vaya en la caja de texto</label><!--label no es funcional solo decoracion-->
-      <input type="text" name="XXCAMPO" value="<?php echo $xxclase->__GET('atributo:clase') ;?>"><br />
+      <input type="text" name="XXCAMPO" value="<?php echo $xclase->__GET('xatributo:clase') ;?>"><br />
       <!--CUANDO SEAN LLAVES FORANEAS
       VAN A USAR UN SELECT CON LO SIGUIENTE
       -->
       <label>campo desplegable</label>
       <select name="xxcampo">
-          <?php foreach ($modelo->consultarNombretabla() as $datos) {;?>
+          <?php foreach ($modelo->consultarXNombretabla() as $datos) {;?>
 
-            <option value="<?php echo $datos->xxCampoID ;?>" <?php echo $xxclase->__GET('id:clase') == $datos->xxCampoID ? 'selected' : ''; ?> > <?php echo $datos->xxCampoTabla  ;?> </option>
+            <option value="<?php echo $datos->xxCampoID ;?>" <?php echo $xclase->__GET('xid:clase') == $datos->xxCampoID ? 'selected' : ''; ?> > <?php echo $datos->xxCampoTabla  ;?> </option>
 
           <?php } ;?>
 
@@ -46,10 +49,10 @@
             <td>
             <!--los campos-->
             <td>
-              <button type="button" class="bt" name="button"><a href="?ac=editar&id=<?php echo $campo->__GET('id:clase');?>">Editar</a></button>
+              <button type="button" class="bt" name="button"><a href="?ac=editar&id=<?php echo $campo->__GET('xid:clase');?>">Editar</a></button>
             </td>
             <td>
-              <button type="button" class="eliminar" name="button"><a href="?ac=eliminar&id=<?php echo $campo->__GET('id:clase');?>">Eliminar</a></button>
+              <button type="button" class="eliminar" name="button"><a href="?ac=eliminar&id=<?php echo $campo->__GET('xid:clase');?>">Eliminar</a></button>
 
             </td>
             </td>
