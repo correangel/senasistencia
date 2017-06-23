@@ -10,10 +10,10 @@ require("../controlador/aprendices-control.php");
         <link href="../css/estilos.css" rel="stylesheet">
     </head>
     <body>
-        <form action="?action=Guardar" method="post">
+        <form action="?ac=" method="post">
         <input type="hidden" name="id" value="">
                 <input type="text" name="aprendices" value="" required="true">
-                
+
                 <select name="Ficha">
                     <?php
                     $modelo->consultarFicha();
@@ -45,7 +45,7 @@ require("../controlador/aprendices-control.php");
                     <th>Genero</th>
                     <th>Estado</th>
                     </thead>
-                </table> 
+                </table>
              </form>
          </form>
     </body>
