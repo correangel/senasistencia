@@ -1,33 +1,33 @@
-<?php
-//require_once("../formato-control.php");
+<?php 
+require("../controlador/formato-control.php");
 ?>
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>formato ftp</title>
+<head>
+    <tittle>formato ftp</tittle>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/estilos.css">
-  </head>
-  <body>
-    <h1>Ingreso de registros para la tabla formato</h1>
-    <form  action="" method="post">
-        <input type="hidden" name="" value="">
-        <input type="text" name="" value=""  required="true" placeholder="Nombre de la notificacion"><br />
-        <input type="text" name="" value="" required="true" placeholder="url del formato"><br />
-        <label>Numero de inasistencias:</label>
-        <select name="">
-          <?php  ?>
-        </select><br />
-        <button type="submit" class="bt" name="button">Guardar</button>
-    </form>
-    <table>
-      <thead>
-        <th>Tipo de notificacion</th>
-        <th>direccion del archivo</th>
-        <th>Editar</th>
-        <th>Eliminar</th>
-      </thead>
+</head>
+    <h1>formato ftp</h1>
+    <form action="?ac=<?php echo $formato->__GET('id_formato') > 0 ? 'actualizar':'registrar'; ?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $formato->__GET('id_formato') ;?>">
+        <label >Nombre Notificacion</label>
+        <input type="text" name="nombreN" value="<?php echo $formato->__GET('nombre_notificacion') ;?>">
+        <label> URL del formato</label>
+        <input type="text" name="url" value="<?php echo $formato->__GET('url_ftp') ;?>">
+        <label >asistencia </label>
+        <select name="idAs">
 
-    </table>
-  </body>
+            <?php foreach ( $modelo->imprimirTabla as $campo) {?>
+                <option value="<?php echo $campo->__GET('ID_Asistencia'); ?>" ></option>
+            <?php }?>
+            
+        </select>
+
+
+
+    </form>
+
+
+
+
 </html>
