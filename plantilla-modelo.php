@@ -13,7 +13,7 @@ class xxplantillaModelo
           $this->PDO->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       } catch (Exception $e)
       {
-          echo "No se pudo conectar a la base de datos codigo de error: "
+          echo "No se pudo conectar a la base de datos codigo de error: ";
           die($e->getMessage());
       }
 
@@ -71,7 +71,7 @@ class xxplantillaModelo
         {
             $consulta = "UPDATE xnombretabla SET xcampo1 = ?, xcampo2 = ? WHERE xID_tabla = ?";
             $objeto = $this->PDO->prepare($consulata);
-            $objeto->execute(array($datos->__GET('xatributo1:clase'),$datos->__GET('xatributo2:clase'),etc..,/*DE ULTIMA SE COLOCA EL atributo id de la clase*/$datos->__GET('xid:clase')));
+            $objeto->execute(array($datos->__GET('xatributo1:clase'),$datos->__GET('xatributo2:clase'),etc..,/*DE ULTIMAS SE COLOCA EL atributo id de la clase*/$datos->__GET('xid:clase')));
 
         } catch (Exception $e) {
           die($e->getMessage());

@@ -51,9 +51,9 @@ class FormatoModelo{
     {
         try
         {
-            $consulta = "INSERT INTO formato_ftp(ID_Formato, Nombre_Notificiacion, Url_Ftp, Asistencia_ID_Asistencia) VALUES (?,?,?,?)";
+            $consulta = "INSERT INTO formato_ftp (ID_Formato, Nombre_Notificacion, Url_Ftp, Asistencia_ID_Asistencia) VALUES (?,?,?,?)";
             $objeto = $this->PDO->prepare($consulta);
-            $objeto->execute(array($datos->__GET('id_formato'),$datos->__GET('nombre_notificacion'),$datos->__GET('url_formato'),$datos->__GET('id_asistencia')));
+            $objeto->execute(array($datos->__GET('id_formato'),$datos->__GET('nombre_notificacion'),$datos->__GET('url_ftp'),$datos->__GET('id_asistencia')));
             
         }catch(Exception $e)
         {
@@ -66,9 +66,9 @@ class FormatoModelo{
     {
         try
         {
-            $consulta = "UPDATE formato_ftp SET Nombre_Notificiacion = ?,Url_Ftp = ?,Asistencia_ID_Asistencia = ? WHERE ID_Formato = ?";
+            $consulta = "UPDATE formato_ftp SET Nombre_Notificacion = ?,Url_Ftp = ?,Asistencia_ID_Asistencia = ? WHERE ID_Formato = ?";
             $objeto = $this->PDO->prepare($consulta);
-            $objeto->execute(array($datos->__GET('nombre_notificacion'),$datos->__GET('url_formato'),$datos->__GET('id_asistencia'),$datos->__GET('id_formato')));
+            $objeto->execute(array($datos->__GET('nombre_notificacion'),$datos->__GET('url_ftp'),$datos->__GET('id_asistencia'),$datos->__GET('id_formato')));
         }catch(Exception $e)
         {
             die($e->getMessage());
@@ -85,7 +85,7 @@ class FormatoModelo{
             $objeto->execute(array($id));
             $campo = $objeto->fetch(PDO::FETCH_OBJ);
             
-            $formato = new FormatoFttp();
+            $formato = new FormatoFtp();
             $formato->__SET('id_formato',$campo->ID_Formato);
             $formato->__SET('nombre_notificacion',$campo->Nombre_Notificacion);
             $formato->__SET('url_ftp',$campo->Url_Ftp);   
@@ -117,10 +117,10 @@ class FormatoModelo{
     {
         try
         {
-            $consulta = "SELECT *FROM asistencia";
+            $consulta = "SELECT*FROM asistencia";
             $objeto = $this->PDO->prepare($consulta);
             $objeto->execute();
-            $tabla = $objeto->fetch(PDO::FETCH_OBJ);
+            $tabla = $objeto->fetchAll(PDO::FETCH_OBJ);
             return $tabla;
         }catch(Exception $e)
         {
