@@ -1,12 +1,12 @@
-<?php 
+<?php
 require("../controlador/formato-control.php");
 ?>
 <html>
 <head>
     <title>formato ftp</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
 </head>
 <body>
     <h1>formato ftp</h1>
@@ -22,7 +22,7 @@ require("../controlador/formato-control.php");
             <?php foreach ( $modelo->consultarAsistencia() as $dato) {?>
                <option value="<?php echo $dato->ID_Asistencia ?>" <?php echo $formato->__GET('id_asistencia') == $dato->ID_Asistencia ? 'selected':''?> ><?php echo $dato->Descripcion_Asistencia ?></option>
             <?php }?>
-            
+
         </select><br />
         <button class="bt" type="submit">Guardar</button>
     </form>
@@ -38,10 +38,10 @@ require("../controlador/formato-control.php");
         </thead>
         <?php foreach ($modelo->imprimirTabla() as $campo) {?>
             <tr>
-                <td><?php echo $campo->__GET('id_formato');?></td>            
-                <td colspan="2"><?php echo $campo->__GET('nombre_notificacion');?></td>            
-                <td><?php echo $campo->__GET('url_ftp');?></td>            
-                <td><?php echo $campo->__GET('id_asistencia');?></td>            
+                <td><?php echo $campo->__GET('id_formato');?></td>
+                <td colspan="2"><?php echo $campo->__GET('nombre_notificacion');?></td>
+                <td><?php echo $campo->__GET('url_ftp');?></td>
+                <td><?php echo $campo->__GET('id_asistencia');?></td>
                 <td>
                 <button type="button" class="bt" ><a href="?ac=editar&id=<?php echo $campo->__GET('id_formato');?>">Editar</a></button>
                 </td>

@@ -107,7 +107,7 @@ class xxplantillaModelo
       try
       {
         $consulta = "DELETE FROM xnombretabla WHERE XID_tabla = ?";//nombre y id segun talba
-        $objeto = $this->PDO->prepare($consulata);
+        $objeto = $this->PDO->prepare($consulta);
         $objeto->execute(array($id));
 
       } catch (Exception $e) {

@@ -1,13 +1,12 @@
 <?php
 require("../controlador/jornada-control.php");
-
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>jornada</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   </head>
   <body>
 

@@ -9,8 +9,11 @@ $archivo = $ruta->Enrutar($op);
 <html>
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>clases</title>
       <link rel="stylesheet" type="text/css" href="css/style.css">
+     
+      
     </head>
     <body>
       <section id="menu">
@@ -42,12 +45,14 @@ $archivo = $ruta->Enrutar($op);
                 <a href="?op=usuario">usuarios</a>
             </div>
           </nav>
-          <section class="crud">
-            <div>
-          <iframe src="<?php echo$archivo;?>" width="" height=""></iframe>
+         <section class="crud">
+          
+             <iframe src="<?php echo$archivo;?>" width="100%" ></iframe>
 
-              </div>
-          </section>
+              
+         </section>
+            
+         
         </section>
 
     </body>

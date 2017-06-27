@@ -2,7 +2,7 @@
 //clase inicializada
   class Aprendices{
     //atributos de la tabla
-     private $id_aprendices;
+     private $id_aprendiz;
      private $documento_aprendiz;
      private $nombre;
      private $apellido;
