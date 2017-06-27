@@ -80,7 +80,7 @@ class xxplantillaModelo
     }
 
     //funcion para editar
-    public function editar($value='')
+    public function editar($id)
     {
       try
       {
