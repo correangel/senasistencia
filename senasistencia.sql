@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2017 a las 05:38:19
+-- Tiempo de generación: 28-06-2017 a las 17:58:12
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.0.18
 
@@ -168,7 +168,7 @@ INSERT INTO `centro_formacion` (`ID_Centro`, `Nombre`, `Direccion`, `Telefono`) 
 (7, 'Centro de Tecnologías de Transporte​​​​', 'Calle 1 No. 7 – 56', 8444118),
 (8, '​Centro Metalmecánico​​​​', 'Calle 5 No. 4 – 70', 7565795),
 (9, 'Centro para la Industria de la Comunicación Gráfica​​', 'Carrera 2 No. 22 – 30', 7355523),
-(10, '​Centro Nacional de Hotelería, Turismo y Alimentos​​​​', 'Carrera 49 C No. 84-141', 8654210);
+(10, '​Centro Nacional de Hotelería, Turismo y Alimentos​​​​', 'Carrera 49 C No. 84-14', 8654210);
 
 -- --------------------------------------------------------
 
@@ -732,7 +732,7 @@ ALTER TABLE `programa_formacion`
 --
 ALTER TABLE `sede`
   ADD PRIMARY KEY (`ID_Sede`),
-  ADD KEY `fk_Sede_Centro_Formación_idx` (`Centro_Formacion_ID_Centro`);
+  ADD KEY `Centro_Formacion_ID_Centro` (`Centro_Formacion_ID_Centro`);
 
 --
 -- Indices de la tabla `tipo_documento`
@@ -778,6 +778,11 @@ ALTER TABLE `asistencia`
 --
 ALTER TABLE `cargo`
   MODIFY `ID_Cargo` bigint(16) NOT NULL AUTO_INCREMENT COMMENT 'Este ID se genera cada vez que se ingresa un registro nuevo referente a los datos del CARGO.', AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `centro_formacion`
+--
+ALTER TABLE `centro_formacion`
+  MODIFY `ID_Centro` bigint(16) NOT NULL AUTO_INCREMENT COMMENT 'Este ID se genera AUTOMATICAMENTE cada vez que se ingresa un registro nuevo referente a los datos del CENTRO DE FORMACION.', AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
@@ -943,12 +948,6 @@ ALTER TABLE `notificacion`
 --
 ALTER TABLE `password_token`
   ADD CONSTRAINT `fk_Password_Token_Usuarios1` FOREIGN KEY (`Usuarios_ID_Usuario`,`Usuarios_Usuario`) REFERENCES `usuarios` (`ID_Usuario`, `Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `sede`
---
-ALTER TABLE `sede`
-  ADD CONSTRAINT `fk_Sede_Centro_Formación` FOREIGN KEY (`Centro_Formacion_ID_Centro`) REFERENCES `centro_formacion` (`ID_Centro`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `usuarios`
